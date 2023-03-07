@@ -9,6 +9,11 @@ public class Osoba {
 
     private Telefon telefon;
 
+    private String SukromnyEmail;
+
+    private String PracovnyEmail;
+
+
     public void setJmeno(String jmeno) {
         Objects.requireNonNull(jmeno);
         if (jmeno.isBlank()) {
@@ -56,6 +61,7 @@ public class Osoba {
         return telefon;
     }
 
+
     public void setTelefon(Telefon telefon) {
         this.telefon = telefon;
     }
@@ -63,5 +69,35 @@ public class Osoba {
     public String toString() {
         return jmeno + " " + prijmeni + " (" + rodneCislo + ")";
     }
-}
 
+
+    public void setSukromnyEmail(String SukromnyEmail) {
+        Objects.requireNonNull(SukromnyEmail);
+        if (SukromnyEmail.isBlank()) {
+            System.err.println("Sukromny Email nemůže být prázdné.");
+            return;
+        }
+        this.SukromnyEmail = SukromnyEmail;
+    }
+
+    public String getSukromnyEmail() {
+        return SukromnyEmail;
+    }
+
+
+    public String getPracovnyEmail() {
+        return PracovnyEmail;
+    }
+
+    public void setPracovnyEmail(String PracovnyEmail) {
+        Objects.requireNonNull(PracovnyEmail);
+        if (PracovnyEmail.isBlank()) {
+            System.err.println("Pracovny Email nemůže být prázdné.");
+            return;
+        }
+        this.PracovnyEmail = PracovnyEmail;
+
+
+    }
+
+}
